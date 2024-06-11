@@ -59,6 +59,13 @@ fun MainInformation(navController: NavController) {
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.secondary
         )
+        Text(
+            text = "Vpy aprendiendo mas dentro de la indjstria",
+            style = MaterialTheme.typography.bodyMedium,
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colorScheme.secondary
+        )
+
 
         Spacer(modifier = Modifier.height(16.dp))
 
