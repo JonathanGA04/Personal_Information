@@ -8,7 +8,9 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import screen.Description
 import screen.MainInformation
+import screen.Settings
 import screen.SplashInformation
+import screen.UserProfile
 
 
 @Composable
@@ -25,6 +27,14 @@ fun NavigationInfo() {
             Description(navController)
 
         }
-
+        composable(ScreenInfo.UserProfile.route)
+        {
+            UserProfile(navController)
+        }
+        composable(ScreenInfo.Settings.route)
+        {
+            Settings(navController)
+        }
     }
+
 }

@@ -1,6 +1,4 @@
 package screen
-
-import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -18,13 +16,12 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @OptIn(ExperimentalMaterial3Api::class)
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun Description(navController: NavController) {
+fun Settings(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "Descripción", color = Color.White) },
+                title = { Text(text = "Configuración", color = Color.White) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
@@ -35,44 +32,66 @@ fun Description(navController: NavController) {
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF6200EE) // Color morado para la barra superior
+                    containerColor = Color(0xFF6200EE)
                 )
             )
         },
         containerColor = Color.Transparent
     ) {
-        DescriptionBody()
+        SettingsBody()
     }
 }
 
 @Composable
-fun DescriptionBody() {
+fun SettingsBody() {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(
                 brush = Brush.verticalGradient(
-                    colors = listOf(Color(0xFF6200EE), Color(0xFF3700B3)) // Gradiente morado
+                    colors = listOf(Color(0xFF6200EE), Color(0xFF3700B3))
                 )
             )
             .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.Start
     ) {
         Text(
-            text = "Voy iniciando en Android Studio y esta es mi primera aplicación",
+            text = "Ajustes de Tema",
             color = Color.White,
-            style = MaterialTheme.typography.bodyLarge,
+            style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.Bold
         )
+        Spacer(modifier = Modifier.height(8.dp))
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Modo Oscuro", color = Color.White)
+            Switch(checked = true, onCheckedChange = { /* Implement dark mode toggle */ })
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            text = "Notificaciones",
+            color = Color.White,
+            style = MaterialTheme.typography.headlineMedium,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Habilitar Notificaciones", color = Color.White)
+            Switch(checked = false, onCheckedChange = { /* Implement notifications toggle */ })
+        }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun DescriptionPreview() {
-    Description(navController = rememberNavController())
+fun SettingsPreview() {
+    Settings(navController = rememberNavController())
 }
-
-
-

@@ -60,7 +60,7 @@ fun MainInformation(navController: NavController) {
             color = MaterialTheme.colorScheme.secondary
         )
         Text(
-            text = "Vpy aprendiendo mas dentro de la indjstria",
+            text = "Estoy aprendiendo mas dentro de la industria",
             style = MaterialTheme.typography.bodyMedium,
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.secondary
@@ -99,3 +99,4 @@ fun AnimatedButton(navController: NavController) {
 fun MainInformationPreview() {
     //MainInformation(navController = NavController(null))
 }
+
