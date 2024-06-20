@@ -61,7 +61,7 @@ fun Splash() {
         verticalArrangement = Arrangement.Center
     ) {
         Image(
-            painter = painterResource(id = R.drawable.user1),
+            painter = painterResource(id = R.drawable.user2),
             contentDescription = "Logo de Informacion",
             modifier = Modifier
                 .size(150.dp, 150.dp)
